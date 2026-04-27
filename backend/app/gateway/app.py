@@ -12,6 +12,8 @@ from app.gateway.routers import (
     artifacts,
     assistants_compat,
     channels,
+    eaib_body,
+    eaib_skills,
     mcp,
     memory,
     models,
@@ -218,6 +220,16 @@ This gateway provides custom endpoints for models, MCP configuration, skills, an
 
     # Stateless Runs API (stream/wait without a pre-existing thread)
     app.include_router(runs.router)
+
+    # EAIB body management API at /api/eaib/body
+    app.include_router(eaib_body.router)
+
+    # EAIB robot skills API at /api/eaib/skills
+    app.include_router(eaib_skills.router)
+
+    # EAIB peer skill-sharing sub-app at /api/eaib/peer
+    from deerflow.eaib.communication.skill_server import skill_server_app
+    app.mount("/api/eaib/peer", skill_server_app)
 
     @app.get("/health", tags=["health"])
     async def health_check() -> dict:

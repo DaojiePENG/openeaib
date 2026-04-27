@@ -975,3 +975,41 @@ checkpointer:
 #   failure_threshold: 5
 #   # Time in seconds before attempting to recover (default: 60)
 #   recovery_timeout_sec: 60
+
+# ============================================================================
+# EAIB — Embodied AI Brain Configuration
+# ============================================================================
+# eaib:
+#   body_registry:
+#     # Directory where body profiles are stored as JSON
+#     storage_dir: "~/.local/share/eaib/bodies"
+#     # Default body to activate on startup ("host" = pure-software mode)
+#     default_body_id: "host"
+#
+#   skill_registry:
+#     # Directory where skill metadata is stored
+#     storage_dir: "~/.local/share/eaib/skills_db"
+#     # Number of successful executions to promote skill TESTED → STABLE
+#     stable_threshold: 3
+#     # Directory where skill Python scripts are saved
+#     skills_code_dir: "~/.local/share/eaib/skills"
+#
+#   safety:
+#     # Minimum risk level that triggers a user clarification request
+#     # Values: LOW, MEDIUM, HIGH  (BLOCKED always blocks regardless)
+#     clarification_threshold: "MEDIUM"
+#     # Whether to enable the Amygdala safety middleware
+#     enabled: true
+#
+#   perception:
+#     # Directory for storing enrolled user face data
+#     face_db_dir: "~/.local/share/eaib/face_db"
+#     # Default camera device index for capture_frame
+#     default_camera_index: 0
+#
+#   peer_sharing:
+#     # Port this EAIB instance listens on for peer skill sharing
+#     # (served at /api/eaib/peer/ by the gateway)
+#     port: 8001
+#     # Whether to allow incoming skill imports from peers
+#     allow_imports: true
