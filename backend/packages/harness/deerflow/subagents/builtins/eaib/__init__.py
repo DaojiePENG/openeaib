@@ -8,6 +8,8 @@ Each subagent models a distinct functional region of the brain:
 - eaib-executive : Prefrontal cortex — high-level planning and module coordination
 """
 
+from deerflow.subagents.config import SubagentConfig
+
 from .executive import EAIB_EXECUTIVE_CONFIG
 from .memory import EAIB_MEMORY_CONFIG
 from .motor import EAIB_MOTOR_CONFIG
@@ -20,10 +22,11 @@ __all__ = [
     "EAIB_MEMORY_CONFIG",
     "EAIB_SAFETY_CONFIG",
     "EAIB_EXECUTIVE_CONFIG",
+    "EAIB_SUBAGENTS",
 ]
 
 # Mapping from subagent name to config — consumed by the parent registry
-EAIB_SUBAGENTS: dict = {
+EAIB_SUBAGENTS: dict[str, SubagentConfig] = {
     "eaib-sensory": EAIB_SENSORY_CONFIG,
     "eaib-motor": EAIB_MOTOR_CONFIG,
     "eaib-memory": EAIB_MEMORY_CONFIG,

@@ -82,4 +82,5 @@ Use `/mnt/user-data/outputs` for final deliverables presented to the operator.
     disallowed_tools=["ask_clarification", "present_files"],
     model="inherit",
     max_turns=80,
+    timeout_seconds=1800,
 )

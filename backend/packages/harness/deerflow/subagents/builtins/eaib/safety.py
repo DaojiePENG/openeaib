@@ -83,4 +83,5 @@ Read action plans from `/mnt/user-data/workspace`.
     disallowed_tools=["task", "ask_clarification"],
     model="inherit",
     max_turns=20,
+    timeout_seconds=120,
 )

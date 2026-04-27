@@ -66,4 +66,5 @@ Write execution logs to `/mnt/user-data/outputs`.
     disallowed_tools=["task", "ask_clarification"],
     model="inherit",
     max_turns=40,
+    timeout_seconds=600,
 )

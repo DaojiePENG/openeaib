@@ -65,4 +65,5 @@ Write processed perception reports to `/mnt/user-data/outputs`.
     disallowed_tools=["task", "ask_clarification"],
     model="inherit",
     max_turns=30,
+    timeout_seconds=300,
 )

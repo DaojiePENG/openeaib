@@ -78,4 +78,5 @@ Read source data from `/mnt/user-data/uploads` when encoding new experiences.
     disallowed_tools=["task", "ask_clarification"],
     model="inherit",
     max_turns=30,
+    timeout_seconds=300,
 )
